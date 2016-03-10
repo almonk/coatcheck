@@ -63,6 +63,5 @@ export default {
 <style scoped>
 .avatar {
   box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.1);
 }
 </style>

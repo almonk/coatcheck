@@ -47,7 +47,7 @@ export default {
           emoji = '🌧'
           break
         case 'sun':
-          emoji = '😎'
+          emoji = '☀️'
           break
         case 'fog':
           emoji = '🌫'
@@ -87,10 +87,16 @@ export default {
   }
 
   .weather-symbol {
-    -webkit-transform: scale(3);
+    -webkit-transform: scale(5);
     position: relative;
-    top: 40px;
-    height:48px;
+    top: 110px;
+    height:58px;
+    margin-bottom: 30px;
+    left: 3px;
+  }
+
+  .title {
+    text-transform: capitalize;
   }
 
   b {
