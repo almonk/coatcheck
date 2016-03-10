@@ -5,7 +5,7 @@
     ></weather>
     <div class="flex flex-wrap m1">
       <div v-for="tweet in tweets" class="flex-none m1">
-        <img width="46" class="rounded avatar" src="{{tweet.user.profile_image_url_https}}"/>
+        <img class="rounded avatar" src="{{tweet.user.profile_image_url_https}}"/>
       </div>
     <div>
   </div>
@@ -63,5 +63,8 @@ export default {
 <style scoped>
 .avatar {
   box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+  height: 46px;
+  width: 46px;
+  overflow: hidden;
 }
 </style>
