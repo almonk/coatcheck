@@ -24,26 +24,28 @@ export default {
   methods: {
     getLocation: function () {
       if (navigator.geolocation) {
-        console.log(navigator.geolocation.getCurrentPosition(this.updateData))
+        navigator.geolocation.getCurrentPosition(this.updateData)
+      } else {
+        window.alert('Can\'t get location')
       }
     },
     updateData: function (position) {
+      console.log('2')
       var latitude = position.coords.latitude
       var longitude = position.coords.longitude
       var endpoint = `http://www.mocky.io/v2/56e160e0260000e101eaa21c?latitude=${latitude}&longitude=${longitude}`
 
-      this.hasData = true
-
       console.log(`${latitude}, ${longitude}`)
-
       $.get(endpoint, function (data) {
+        this.hasData = true
         console.log(data)
         this.weather = data.weather
         this.location = data.location
       }.bind(this))
     }
   },
-  ready: function () {
+  created: function () {
+    console.log('Hello')
     this.getLocation()
   }
 }
