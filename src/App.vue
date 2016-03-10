@@ -8,6 +8,7 @@
 <script>
 import weather from './components/Weather'
 import spinner from './components/Spinner'
+import $ from 'jquery'
 export default {
   components: {
     weather,
@@ -35,11 +36,10 @@ export default {
 
       console.log(`${latitude}, ${longitude}`)
 
-      window.fetch(endpoint).then(function (response) {
-        return response.json()
-      }).then(function (json) {
-        this.weather = json.weather
-        this.location = json.location
+      $.get(endpoint, function (data) {
+        console.log(data)
+        this.weather = data.weather
+        this.location = data.location
       }.bind(this))
     }
   },
