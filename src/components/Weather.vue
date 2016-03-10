@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="flex refresh-bar p1" v-on:click="refreshData()">
+  <div class="flex refresh-bar p2" v-on:click="refreshData()">
     <div class="flex-auto">
       <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
     </div>
