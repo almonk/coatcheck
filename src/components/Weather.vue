@@ -1,5 +1,5 @@
 <template>
-  <div class="hero is-info is-header">
+  <div class="hero is-info pt2 is-header">
     <div class="hero-header py3">
       <div class="container">
         <div class="weather-symbol">
