@@ -20,6 +20,15 @@
     </div>
   </div>
 
+  <hr class="my0"/>
+
+  <a class="m2 button share is-medium is-info" href="https://twitter.com/intent/tweet?text={{tweetText}}" target="_blank">
+    Share this thing
+  </a>
+
+  <div class="p2 center">
+    <p>A thing by <a href="https://twitter.com/appltn">@appltn</a> &amp; <a href="https://twitter.com/almonk">@almonk</a> 💃</p>
+  </div>
 
 </template>
 
@@ -38,6 +47,11 @@ export default {
       location: '',
       hasData: false,
       tweets: []
+    }
+  },
+  computed: {
+    tweetText: function () {
+      return encodeURIComponent(`${this.tweets.length} people near me are tweeting about #${this.weather} – https://coatcheck.me`)
     }
   },
   methods: {
@@ -85,6 +99,12 @@ a.hashtag {
   padding: 4px 10px;
   font-size: 16px;
   margin-bottom: 5px;
+}
+
+.share {
+  display: block;
+  background-color: #3B7FEB;
+  margin-bottom: 0px;
 }
 
 .avatar {
