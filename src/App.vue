@@ -30,7 +30,6 @@ export default {
       }
     },
     updateData: function (position) {
-      console.log('2')
       var latitude = position.coords.latitude
       var longitude = position.coords.longitude
       var endpoint = `http://www.mocky.io/v2/56e160e0260000e101eaa21c?latitude=${latitude}&longitude=${longitude}`
@@ -45,7 +44,6 @@ export default {
     }
   },
   created: function () {
-    console.log('Hello')
     this.getLocation()
   }
 }
