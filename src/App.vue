@@ -5,7 +5,9 @@
     ></weather>
     <div class="flex flex-wrap m1">
       <div v-for="tweet in tweets" class="flex m1">
-        <img height="46" class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
+        <a href="https://twitter.com/{{tweet.user.name}}" target="_blank">
+          <img height="46" class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
+        </a>
       </div>
     </div>
 
