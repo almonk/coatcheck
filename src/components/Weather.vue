@@ -16,18 +16,19 @@
     </div>
   </div>
 
-  <div class="flex refresh-bar p2" v-on:click="refreshData()">
-    <div class="flex-auto">
-      <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
-    </div>
-    <div>
-      <span class="icon icon-refresh">
-        <i class="fa fa-refresh"></i>
-      </span>
+  <div class="container">
+    <div class="flex refresh-bar p2" v-on:click="refreshData()">
+      <div class="flex-auto">
+        <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
+      </div>
+      <div>
+        <span class="icon icon-refresh">
+          <i class="fa fa-refresh"></i>
+        </span>
+      </div>
     </div>
   </div>
 
-  <hr class="my0"/>
 </template>
 
 <script>
@@ -89,7 +90,7 @@ export default {
   .weather-symbol {
     -webkit-transform: scale(5);
     position: relative;
-    top: 110px;
+    top: 90px;
     height:58px;
     margin-bottom: 30px;
   }

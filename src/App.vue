@@ -3,35 +3,39 @@
     <spinner v-if="!hasData"></spinner>
     <weather v-if="hasData" :weather="weather" :location="location" :tweets="tweets" :reloading="!hasData"
     ></weather>
-    <div class="flex flex-wrap m1">
-      <div v-for="tweet in tweets" class="flex m1">
-        <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}" target="_blank">
-          <img height="46" class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
-        </a>
+
+    <div class="container">
+      <div class="flex flex-wrap m1">
+        <div v-for="tweet in tweets" class="flex m1">
+          <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}" target="_blank">
+            <img height="46" class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
+          </a>
+        </div>
       </div>
     </div>
 
-    <hr class="my0"/>
+    <div class="container">
+      <div class="p1">
+        <template v-for="tweet in tweets">
+          <span v-for="hashtag in tweet.entities.hashtags">
+            <a target="_blank" href="https://twitter.com/search?q={{hashtag.text}}" class="hashtag">#{{hashtag.text}}</a>
+          </span>
+        </template>
+      </div>
+    </div>
 
-    <div class="p1">
-      <template v-for="tweet in tweets">
-        <span v-for="hashtag in tweet.entities.hashtags">
-          <a target="_blank" href="https://twitter.com/search?q={{hashtag.text}}" class="hashtag">#{{hashtag.text}}</a>
-        </span>
-      </template>
+    <hr class="my1"/>
+
+    <div class="container">
+      <a class="m2 button share is-medium is-info" href="https://twitter.com/intent/tweet?text={{tweetText}}" target="_blank">
+        Share this thing
+      </a>
+
+      <div class="p2 center">
+        <p>A thing by <a href="https://twitter.com/appltn">@appltn</a> &amp; <a href="https://twitter.com/almonk">@almonk</a> 💃</p>
+      </div>
     </div>
   </div>
-
-  <hr class="my0"/>
-
-  <a class="m2 button share is-medium is-info" href="https://twitter.com/intent/tweet?text={{tweetText}}" target="_blank">
-    Share this thing
-  </a>
-
-  <div class="p2 center">
-    <p>A thing by <a href="https://twitter.com/appltn">@appltn</a> &amp; <a href="https://twitter.com/almonk">@almonk</a> 💃</p>
-  </div>
-
 </template>
 
 <script>
