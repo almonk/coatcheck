@@ -1,30 +1,32 @@
 <template>
-  <div class="hero is-info pt2 is-header">
-    <div class="hero-header py3">
-      <div class="container">
-        <div class="weather-symbol">
-          {{weatherAsEmoji}}
+  <div class="fixed fixed-header">
+    <div class="hero is-info pt2 is-header">
+      <div class="hero-header py3">
+        <div class="container">
+          <div class="weather-symbol">
+            {{weatherAsEmoji}}
+          </div>
+          <h1 class="title">{{weather}}</h1>
+          <h2 class="subtitle">
+            <span class="icon icon-map">
+              <i class="fa fa-map-marker"></i>
+            </span>
+            {{location}}
+          </h2>
         </div>
-        <h1 class="title">{{weather}}</h1>
-        <h2 class="subtitle">
-          <span class="icon icon-map">
-            <i class="fa fa-map-marker"></i>
-          </span>
-          {{location}}
-        </h2>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="flex refresh-bar p2" v-on:click="refreshData()">
-      <div class="flex-auto">
-        <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
-      </div>
-      <div>
-        <span class="icon icon-refresh">
-          <i class="fa fa-refresh"></i>
-        </span>
+    <div class="container">
+      <div class="flex refresh-bar p2" v-on:click="refreshData()">
+        <div class="flex-auto">
+          <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
+        </div>
+        <div>
+          <span class="icon icon-refresh">
+            <i class="fa fa-refresh"></i>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -80,6 +82,13 @@ export default {
   .is-header {
     background-image: linear-gradient(-270deg, #3A82EC 0%, #5438E3 100%);
     overflow: hidden;
+  }
+
+  .fixed-header {
+    width: 100%;
+    z-index: 1;
+    top: 0px;
+    background-color: white;
   }
 
   .columns {

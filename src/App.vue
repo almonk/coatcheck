@@ -4,7 +4,7 @@
     <weather v-if="hasData" :weather="weather" :location="location" :tweets="tweets" :reloading="!hasData"
     ></weather>
 
-    <div class="container">
+    <div class="container content">
       <div class="flex flex-wrap m1">
         <div v-for="tweet in tweets" class="flex m1">
           <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}" target="_blank">
@@ -117,5 +117,9 @@ a.hashtag {
   width: 46px;
   background-color: #ccc;
   overflow: hidden;
+}
+
+.content {
+  margin-top: 300px;
 }
 </style>
