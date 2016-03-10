@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import weather from './components/weather'
-import spinner from './components/spinner'
+import weather from './components/Weather'
+import spinner from './components/Spinner'
 export default {
   components: {
     weather,
