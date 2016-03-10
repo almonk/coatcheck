@@ -18,7 +18,7 @@
 
   <div class="flex refresh-bar p1" v-on:click="refreshData()">
     <div class="flex-auto">
-      <b>61 people</b> tweeted it's raining near you
+      <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
     </div>
     <div>
       <span class="icon icon-refresh">
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  props: ['weather', 'location', 'reloading'],
+  props: ['weather', 'location', 'reloading', 'tweets'],
   methods: {
     refreshData: function () {
       this.$parent.getLocation()

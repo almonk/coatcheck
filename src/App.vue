@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <spinner v-if="!hasData"></spinner>
-    <weather v-if="hasData" :weather="weather" :location="location" :reloading="!hasData"
+    <weather v-if="hasData" :weather="weather" :location="location" :tweets="tweets" :reloading="!hasData"
     ></weather>
+    <div class="flex flex-wrap m1">
+      <div v-for="tweet in tweets" class="flex-none m1">
+        <img width="46" class="rounded avatar" src="{{tweet.user.profile_image_url_https}}"/>
+      </div>
+    <div>
   </div>
 </template>
 
@@ -19,7 +24,8 @@ export default {
     return {
       weather: '',
       location: '',
-      hasData: false
+      hasData: false,
+      tweets: []
     }
   },
   methods: {
@@ -44,6 +50,7 @@ export default {
 
         this.weather = data.weather
         this.location = data.location
+        this.tweets = data.supporting_tweets
       }.bind(this))
     }
   },
@@ -52,3 +59,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.avatar {
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+</style>
