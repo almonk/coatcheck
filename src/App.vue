@@ -30,7 +30,7 @@
       </a>
 
       <div class="p2 center">
-        <p>A thing by <a href="https://twitter.com/appltn">@appltn</a> &amp; <a href="https://twitter.com/almonk">@almonk</a> 💃</p>
+        <p>A thing by <a href="https://twitter.com/appltn" class="hashtag">@appltn</a> &amp; <a href="https://twitter.com/almonk" class="hashtag">@almonk</a> 💃</p>
       </div>
     </div>
   </div>
@@ -102,6 +102,7 @@ a.hashtag {
   border-radius: 20px;
   padding: 4px 10px;
   font-size: 16px;
+  background-color: white;
   margin-bottom: 5px;
 }
 

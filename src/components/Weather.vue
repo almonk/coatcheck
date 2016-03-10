@@ -89,6 +89,7 @@ export default {
     z-index: 1;
     top: 0px;
     background-color: white;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
   }
 
   .columns {
