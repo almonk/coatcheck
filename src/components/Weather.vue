@@ -62,10 +62,14 @@ export default {
 <style scoped>
   .is-header {
     background-image: linear-gradient(-270deg, #3A82EC 0%, #5438E3 100%);
+    overflow: hidden;
   }
 
   .weather-symbol {
-    font-size: 48px;
+    -webkit-transform: scale(3);
+    position: relative;
+    top: 40px;
+    height:48px;
   }
 
   b {
