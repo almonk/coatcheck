@@ -16,8 +16,15 @@
     </div>
   </div>
 
-  <div class="py2 center">
-    <b>61 people</b> are saying it's raining near you
+  <div class="flex refresh-bar p1" v-on:click="refreshData()">
+    <div class="flex-auto">
+      <b>61 people</b> tweeted it's raining near you
+    </div>
+    <div>
+      <span class="icon icon-refresh">
+        <i class="fa fa-refresh"></i>
+      </span>
+    </div>
   </div>
 
   <hr class="my0"/>
@@ -25,7 +32,12 @@
 
 <script>
 export default {
-  props: ['weather', 'location'],
+  props: ['weather', 'location', 'reloading'],
+  methods: {
+    refreshData: function () {
+      this.$parent.getLocation()
+    }
+  },
   computed: {
     weatherAsEmoji: function () {
       var emoji
@@ -60,9 +72,18 @@ export default {
 </script>
 
 <style scoped>
+  a {
+    color: #3B7FEB;
+  }
+
   .is-header {
     background-image: linear-gradient(-270deg, #3A82EC 0%, #5438E3 100%);
     overflow: hidden;
+  }
+
+  .columns {
+    margin-bottom: 0;
+    padding-top:12px;
   }
 
   .weather-symbol {
@@ -76,10 +97,20 @@ export default {
     font-weight: bold;
   }
 
+  .refresh-bar {
+    cursor: pointer;
+  }
+
   .icon-map {
     width: 12px;
     font-size: 18px;
     position: relative;
     top: -2px;
+  }
+
+  .icon-refresh {
+    font-size: 16px;
+    position: relative;
+    top: -1px;
   }
 </style>

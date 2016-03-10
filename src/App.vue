@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <spinner v-if="!hasData"></spinner>
-    <weather v-if="hasData" :weather="weather" :location="location"></weather>
+    <weather v-if="hasData" :weather="weather" :location="location" :reloading="!hasData"
+    ></weather>
   </div>
 </template>
 
@@ -32,7 +33,9 @@ export default {
     updateData: function (position) {
       var latitude = position.coords.latitude
       var longitude = position.coords.longitude
-      var endpoint = `http://www.mocky.io/v2/56e17d60260000d502eaa255?latitude=${latitude}&longitude=${longitude}`
+      var endpoint = `https://coatcheck-api.herokuapp.com/search?latitude=${latitude}&longitude=${longitude}`
+
+      this.hasData = false
 
       console.log(`${latitude}, ${longitude}`)
       $.get(endpoint, function (data) {
