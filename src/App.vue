@@ -60,6 +60,8 @@ export default {
   },
   methods: {
     getLocation: function () {
+      this.hasData = false
+
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(this.updateData)
       } else {
@@ -70,8 +72,6 @@ export default {
       var latitude = position.coords.latitude
       var longitude = position.coords.longitude
       var endpoint = `https://coatcheck-api.herokuapp.com/search?latitude=${latitude}&longitude=${longitude}`
-
-      this.hasData = false
 
       console.log(`${latitude}, ${longitude}`)
       $.get(endpoint, function (data) {
