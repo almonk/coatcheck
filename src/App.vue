@@ -5,7 +5,7 @@
     ></weather>
     <div class="flex flex-wrap m1">
       <div v-for="tweet in tweets" class="flex m1">
-        <img height="46" class="rounded avatar" v-bind:src="tweet.user.profile_image_url_https"/>
+        <img height="46" class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
       </div>
     </div>
 
@@ -83,13 +83,15 @@ a.hashtag {
   margin-right: 2px;
   border-radius: 20px;
   padding: 4px 10px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
 .avatar {
-  box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
   height: 46px;
   width: 46px;
+  background-color: #ccc;
   overflow: hidden;
 }
 </style>
