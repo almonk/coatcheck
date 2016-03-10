@@ -3,6 +3,7 @@
   "description": "A weather app powered by twitter",
   "author": "Alasdair Monk <alasdair.monk@gmail.com>",
   "scripts": {
+    "start": "npm run build",
     "dev": "node build/dev-server.js",
     "build": "rimraf dist && mkdirp dist && ncp static dist/static && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
