@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     tweetText: function () {
-      return encodeURIComponent(`${this.tweets.length} people near me are tweeting about #${this.weather} – https://coatcheck.me`)
+      return encodeURIComponent(`${this.tweets.length} people near me are tweeting the weather #${this.weather} – https://coatcheck.me`)
     }
   },
   methods: {
