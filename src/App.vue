@@ -36,8 +36,9 @@ export default {
 
       console.log(`${latitude}, ${longitude}`)
       $.get(endpoint, function (data) {
-        this.hasData = true
         console.log(data)
+        this.hasData = true
+
         this.weather = data.weather
         this.location = data.location
       }.bind(this))
