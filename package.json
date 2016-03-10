@@ -3,7 +3,7 @@
   "description": "A weather app powered by twitter",
   "author": "Alasdair Monk <alasdair.monk@gmail.com>",
   "scripts": {
-    "start": "npm run build",
+    "postinstall": "npm run build",
     "dev": "node build/dev-server.js",
     "build": "rimraf dist && mkdirp dist && ncp static dist/static && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
@@ -13,9 +13,7 @@
   "dependencies": {
     "vue": "^1.0.17",
     "vue-router": "^0.7.11",
-    "vuex": "^0.6.2"
-  },
-  "devDependencies": {
+    "vuex": "^0.6.2",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",
