@@ -1,8 +1,10 @@
 <template>
-  <div class="hero is-info">
+  <div class="hero is-info is-header">
     <div class="hero-header py3">
       <div class="container">
-        <h1 class="title">☔️</h1>
+        <div class="weather-symbol">
+          🌧
+        </div>
         <h1 class="title">{{weather}}</h1>
         <h2 class="subtitle">
           <span class="icon icon-map">
@@ -15,8 +17,10 @@
   </div>
 
   <div class="py2 center">
-    <p><b>61 people</b> are saying it's raining near you 😭</p>
+    <b>61 people</b> are saying it's raining near you 😭
   </div>
+
+  <hr class="my0"/>
 </template>
 
 <script>
@@ -26,6 +30,14 @@ export default {
 </script>
 
 <style scoped>
+  .is-header {
+    background-image: linear-gradient(-270deg, #3A82EC 0%, #5438E3 100%);
+  }
+
+  .weather-symbol {
+    font-size: 48px;
+  }
+
   b {
     font-weight: bold;
   }
