@@ -92,7 +92,6 @@ export default {
     top: 110px;
     height:58px;
     margin-bottom: 30px;
-    left: 3px;
   }
 
   .title {

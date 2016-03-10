@@ -5,7 +5,7 @@
     ></weather>
     <div class="flex flex-wrap m1">
       <div v-for="tweet in tweets" class="flex-none m1">
-        <img class="rounded avatar" src="{{tweet.user.profile_image_url_https}}"/>
+        <img height="46" class="rounded avatar" v-bind:src="tweet.user.profile_image_url_https"/>
       </div>
     <div>
   </div>
