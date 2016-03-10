@@ -24,10 +24,8 @@
       </div>
     </div>
 
-    <hr class="my1"/>
-
-    <div class="container">
-      <a class="m2 button share is-medium is-info" href="https://twitter.com/intent/tweet?text={{tweetText}}" target="_blank">
+    <div class="container mt2">
+      <a v-if="hasData" class="m2 button share is-medium is-info" href="https://twitter.com/intent/tweet?text={{tweetText}}" target="_blank">
         Share this thing
       </a>
 
