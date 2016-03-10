@@ -3,7 +3,7 @@
     <div class="hero-header py3">
       <div class="container">
         <div class="weather-symbol">
-          🌧
+          {{weatherAsEmoji}}
         </div>
         <h1 class="title">{{weather}}</h1>
         <h2 class="subtitle">
@@ -17,7 +17,7 @@
   </div>
 
   <div class="py2 center">
-    <b>61 people</b> are saying it's raining near you 😭
+    <b>61 people</b> are saying it's raining near you
   </div>
 
   <hr class="my0"/>
@@ -25,7 +25,37 @@
 
 <script>
 export default {
-  props: ['weather', 'location']
+  props: ['weather', 'location'],
+  computed: {
+    weatherAsEmoji: function () {
+      var emoji
+
+      switch (this.weather) {
+        case 'rain':
+          emoji = '🌧'
+          break
+        case 'sun':
+          emoji = '😎'
+          break
+        case 'fog':
+          emoji = '🌫'
+          break
+        case 'wind':
+          emoji = '🍃'
+          break
+        case 'cloud':
+          emoji = '☁️'
+          break
+        case 'snow':
+          emoji = '⛄️'
+          break
+        default:
+          emoji = '😣'
+      }
+
+      return emoji
+    }
+  }
 }
 </script>
 

@@ -32,12 +32,12 @@ export default {
     updateData: function (position) {
       var latitude = position.coords.latitude
       var longitude = position.coords.longitude
-      var endpoint = `http://www.mocky.io/v2/56e160e0260000e101eaa21c?latitude=${latitude}&longitude=${longitude}`
+      var endpoint = `http://www.mocky.io/v2/56e17d60260000d502eaa255?latitude=${latitude}&longitude=${longitude}`
 
       console.log(`${latitude}, ${longitude}`)
       $.get(endpoint, function (data) {
-        console.log(data)
         this.hasData = true
+        console.log(data)
 
         this.weather = data.weather
         this.location = data.location
