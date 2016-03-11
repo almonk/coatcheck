@@ -11,11 +11,7 @@
             <span class="icon icon-map">
               <i class="fa fa-map-marker"></i>
             </span>
-            {{#if location}}
-              {{location}}
-            {{else}}
-              Somewhere
-            {{/if}}
+            {{location}}
           </h2>
         </div>
       </div>
