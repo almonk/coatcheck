@@ -44,11 +44,22 @@ export default {
   },
   ready: function () {
     var header = $('.fixed-header')
-    $(window).scroll(function () {
+    var content = $('.content')
+
+    $(window).on('touchmove', function (event) {
       var scroll = $(window).scrollTop()
-      if (scroll > 0) {
+      if (scroll >= 10) {
         header.addClass('is-compact')
+        content.addClass('is-compact')
       } else {
+        header.removeClass('is-compact')
+        content.removeClass('is-compact')
+      }
+    })
+
+    $(window).on('scroll', function (event) {
+      var scroll = $(window).scrollTop()
+      if (scroll < 10) {
         header.removeClass('is-compact')
       }
     })
