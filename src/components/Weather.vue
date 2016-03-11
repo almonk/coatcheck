@@ -44,7 +44,6 @@ export default {
   },
   ready: function () {
     var header = $('.fixed-header')
-    var content = $('.content')
 
     $(window).on('touchmove', function (event) {
       var scroll = $(window).scrollTop()
