@@ -34,32 +34,12 @@
 </template>
 
 <script>
-import $ from 'jquery'
 export default {
   props: ['weather', 'location', 'reloading', 'tweets'],
   methods: {
     refreshData: function () {
       this.$parent.getLocation()
     }
-  },
-  ready: function () {
-    var header = $('.fixed-header')
-
-    $(window).on('touchmove', function (event) {
-      var scroll = $(window).scrollTop()
-      if (scroll >= 10) {
-        header.addClass('is-compact')
-      } else {
-        header.removeClass('is-compact')
-      }
-    })
-
-    $(window).on('scroll', function (event) {
-      var scroll = $(window).scrollTop()
-      if (scroll < 10) {
-        header.removeClass('is-compact')
-      }
-    })
   },
   computed: {
     weatherAsEmoji: function () {
