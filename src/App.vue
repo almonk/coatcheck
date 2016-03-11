@@ -123,8 +123,4 @@ a.hashtag {
 .content {
   margin-top: 300px;
 }
-
-.content.is-compact {
-  margin-top: 230px;
-}
 </style>
