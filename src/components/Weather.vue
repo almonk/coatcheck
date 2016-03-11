@@ -34,12 +34,24 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   props: ['weather', 'location', 'reloading', 'tweets'],
   methods: {
     refreshData: function () {
       this.$parent.getLocation()
     }
+  },
+  ready: function () {
+    var header = $('.fixed-header')
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop()
+      if (scroll > 0) {
+        header.addClass('is-compact')
+      } else {
+        header.removeClass('is-compact')
+      }
+    })
   },
   computed: {
     weatherAsEmoji: function () {
@@ -92,6 +104,13 @@ export default {
     box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
   }
 
+  .fixed-header.is-compact .weather-symbol {
+    -webkit-transform: scale(0);
+    margin-bottom: -12px;
+    height:0;
+    opacity: 0;
+  }
+
   .columns {
     margin-bottom: 0;
     padding-top:12px;
@@ -102,7 +121,10 @@ export default {
     position: relative;
     top: 90px;
     height:58px;
+    opacity: 1;
     margin-bottom: 30px;
+    -webkit-transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition:         all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   .title {

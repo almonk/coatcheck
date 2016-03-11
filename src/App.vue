@@ -8,7 +8,7 @@
       <div class="flex flex-wrap m1">
         <div v-for="tweet in tweets" class="flex m1">
           <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}" target="_blank">
-            <img height="46" class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
+            <img class="circle avatar" v-bind:src="tweet.user.profile_image_url_https"/>
           </a>
         </div>
       </div>
@@ -114,8 +114,8 @@ a.hashtag {
 
 .avatar {
   box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-  height: 46px;
-  width: 46px;
+  height: 54px;
+  width: 54px;
   background-color: #ccc;
   overflow: hidden;
 }
