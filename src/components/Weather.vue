@@ -20,7 +20,7 @@
     <div class="container">
       <div class="flex refresh-bar p2" v-on:click="refreshData()">
         <div class="flex-auto">
-          <b>{{tweets.length}} people</b> tweeted there's {{weather}} near you
+          <b>{{tweets.length }} {{tweets.length | pluralize 'person' 'people'}}</b> tweeted there's {{weather}} near you
         </div>
         <div>
           <span class="icon icon-refresh">
