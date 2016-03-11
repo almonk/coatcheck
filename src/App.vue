@@ -62,7 +62,16 @@ export default {
     getLocation: function () {
       this.hasData = false
 
-      if (navigator.geolocation) {
+      var params = this.getQuery()
+
+      if (params.latitude && params.longitude) {
+        this.updateData({
+          coords: {
+            latitude: params.latitude,
+            longitude: params.longitude
+          }
+        })
+      } else if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(this.updateData)
       } else {
         window.alert('Can\'t get location')
@@ -82,6 +91,20 @@ export default {
         this.location = data.location
         this.tweets = data.supporting_tweets
       }.bind(this))
+    },
+    getQuery: function () {
+      return document.location.search.replace('?', '').split('&').map(function (param) {
+        var parts = param.split('=')
+        var key = parts[0]
+        var val = parts[1]
+        var obj = {}
+        obj[key] = val
+
+        return obj
+      }).reduce(function (memo, item) {
+        Object.assign(memo, item)
+        return memo
+      }, {})
     }
   },
   created: function () {
