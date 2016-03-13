@@ -15,14 +15,16 @@
     </div>
 
     <div class="container">
-      <div class="p1">
+      <div class="p2">
         <template v-for="tweet in tweets">
           <span v-for="hashtag in tweet.entities.hashtags">
-            <a target="_blank" href="https://twitter.com/search?q={{hashtag.text}}" class="hashtag">#{{hashtag.text}}</a>
+            <a target="_blank" href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}" class="hashtag">#{{hashtag.text}}</a>
           </span>
         </template>
       </div>
     </div>
+
+    <hr>
 
     <div class="container mt2">
       <a v-if="hasData" class="m2 button share is-medium is-info" href="https://twitter.com/intent/tweet?text={{tweetText}}" target="_blank">
