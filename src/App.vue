@@ -122,17 +122,6 @@ a {
   color: #3B7FEB;
 }
 
-a.hashtag {
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-  display: inline-block;
-  margin-right: 2px;
-  border-radius: 20px;
-  padding: 4px 10px;
-  font-size: 16px;
-  background-color: white;
-  margin-bottom: 5px;
-}
-
 .share {
   display: block;
   background-color: #3B7FEB;
