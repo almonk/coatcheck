@@ -18,7 +18,7 @@
       <div class="p2">
         <template v-for="tweet in tweets">
           <span v-for="hashtag in tweet.entities.hashtags">
-            <a target="_blank" href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}" class="hashtag">#{{hashtag.text}}</a>
+            <hashtag :tweet="tweet" :hashtag="hashtag"></hashtag>
           </span>
         </template>
       </div>
@@ -41,11 +41,13 @@
 <script>
 import weather from './components/Weather'
 import spinner from './components/Spinner'
+import hashtag from './components/Hashtag'
 import $ from 'jquery'
 export default {
   components: {
     weather,
-    spinner
+    spinner,
+    hashtag
   },
   data () {
     return {
