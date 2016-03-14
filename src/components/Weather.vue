@@ -18,7 +18,7 @@
     </div>
 
     <div class="container">
-      <div class="flex refresh-bar p2" v-on:click="refreshData()">
+      <div class="flex refresh-bar p2" v-on:click="this.$parent.getLocation()">
         <div class="flex-auto">
           <b>{{tweets.length }} {{tweets.length | pluralize 'person' 'people'}}</b> tweeted there's {{weather}} near you
         </div>
@@ -30,17 +30,11 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
   props: ['weather', 'location', 'reloading', 'tweets'],
-  methods: {
-    refreshData: function () {
-      this.$parent.getLocation()
-    }
-  },
   computed: {
     weatherAsEmoji: function () {
       var emoji
